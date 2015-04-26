@@ -1,5 +1,4 @@
 # hosts_list
-
 #### Table of Contents
 
 1. [Overview](#overview)
@@ -123,3 +122,5 @@ The directory where the resulted file should be stored
 
 ##### owner, grp, mode
 These are the standard access control for the generated file
+=======
+Puppet module that generates a file contains vertical host list of a certain group such as a cluster using Puppet exported resources
