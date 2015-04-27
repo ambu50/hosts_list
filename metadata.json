@@ -1,14 +1,38 @@
 {
-  "name": "bukhamsin-hosts_list",
-  "version": "0.1.0",
-  "author": "bukhamsin",
+  "name": "ambu50-hosts_list",
+  "version": "0.1.1",
+  "author": "ambu50",
   "summary": "Generates a file contains a hosts list using Puppet exported resources",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "source": "http://github.com/ambu50/hosts_list",
   "project_page": "https://github.com/ambu50/hosts_list",
   "issues_url": "https://github.com/ambu50/hosts_list/issues",
+  "tags": [
+    "hosts",
+    "list",
+    "group",
+    "pdsh"
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5.0",
+        "6.0",
+        "7.0"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "12.04",
+        "10.04",
+        "15.04"
+      ]
+    }
+  ],
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"}
   ]
 }
 
