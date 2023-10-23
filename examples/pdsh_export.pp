@@ -12,10 +12,9 @@
 # collector export and collect. Use pdsh_export_collect for the collector and
 # pdsh_export for all the other hosts. This is useful when there is a need to
 # include the collector in the resulted host list
-
-class pdsh_export {
-
-  $cluster = $::ecc_clustername
+#
+class pdsh_export { # lint:ignore:autoloader_layout
+  $cluster = $facts['ecc_clustername']
   $directory = '/etc/dsh/group'
   $dsh = '/etc/dsh'
 
@@ -23,19 +22,14 @@ class pdsh_export {
     ensure => 'directory',
   }
 
-  ->
-
-  file { "pdsh_${directory}":
+  -> file { "pdsh_${directory}":
     ensure => 'link',
     path   => $directory,
     force  => true,
     target => '/enod/hpc/dsh/group',
   }
 
-  ->
-
-  ::hosts_list::export{ $cluster:
-    directory  =>  $directory,
+  -> hosts_list::export { $cluster:
+    directory  => $directory,
   }
-
 }
